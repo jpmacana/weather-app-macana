@@ -54,7 +54,7 @@ function App() {
     <div className="App">
       <div>
         <SearchBar onSearch={onSearch} />
-        <Cards cities={cities} />
+        <Cards cities={cities} onRemove={handleRemoveCity}/>
       </div>
     </div>
   );
