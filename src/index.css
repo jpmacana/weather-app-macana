@@ -1,0 +1,32 @@
+:root {
+
+  --color-maximum-red: #630606;
+  --color-blue-hard: #0E185F;
+  --btn-danger-color: var(--color-maximum-red);
+  --btn-blue-color: var(--color-blue-hard);
+  
+}
+
+
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input{
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
