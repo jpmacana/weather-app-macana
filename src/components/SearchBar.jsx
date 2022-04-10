@@ -4,16 +4,18 @@ import {GoSearch} from "react-icons/go";
 
 export default function SearchBar({onSearch}) {
   
-function handleOnSearch() {
+function handleOnSearch(event) {
+  event.preventDefault();
   if (typeof onSearch === "function") {
     const input = document.getElementById('search-bar-input')
     onSearch(input.value)
+    input.value = '';
     
   }
 }
 
-  return <div className={Styles.searchBar}>
+  return <form className={Styles.searchBar} onSubmit={handleOnSearch}>
     <input placeholder="Agrega una nueva ciudad" id="search-bar-input" />
-    <button onClick={handleOnSearch} > <GoSearch/> </button>
-  </div>
+    <button type='submit'> <GoSearch/> </button>
+  </form>
 };
