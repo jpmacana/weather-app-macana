@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
 import Cards from "./components/Cards.jsx";
-import SearchBar from "./components/SearchBar.jsx";
+import Nav from "./components/Nav";
+import {Route} from 'react-router-dom';
+import About from "./components/About";
+import Ciudad from "./components/Ciudad";
 
 
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -52,12 +55,31 @@ function App() {
 
   return (
     <div className="App">
+      <Route path="/"> 
+      <Nav onSearch={onSearch} /> 
+      </Route>
       <div>
-        <SearchBar onSearch={onSearch} />
-        <Cards cities={cities} onRemove={handleRemoveCity}/>
+      <Route path="/" exact> 
+      <Cards cities={cities} onRemove={handleRemoveCity}/>
+      </Route>
+      
+      <Route path="/about" exact> 
+      <About />
+      </Route>
+      
+      <Route path="/ciudad/:ciudadId" exact> 
+      <Ciudad />
+      </Route>
       </div>
-    </div>
+      <hr/>            
+      </div>
   );
 }
 
 export default App;
+
+/*
+<Route path="/" exact render = {<Cards cities={cities} onRemove={handleRemoveCity}/> }/>
+<Route path="/about" component={About}/>
+  
+*/
