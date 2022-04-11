@@ -7,9 +7,10 @@ import icon_09d from "../assets/09d.png"
 import icon_03n from "../assets/03n.png"
 import icon_01d from "../assets/01d.png"
 import icon_13d from '../assets/13d.png'
+import { Link } from "react-router-dom";
 
 
-export default function Card({ max, min, name, img, onClose }) {
+export default function Card({ max, min, name, img, onClose,id }) {
   // acá va tu código
 
   //!Verificamos que onClose sea una funcion
@@ -19,8 +20,12 @@ export default function Card({ max, min, name, img, onClose }) {
 
   return (
     <div className={styles.card}>
-      <button className={styles.closeButton} onClick={handleOnClose}><GoX/></button>
-      <span className={styles.cityName}>{name}</span>
+      <button className={styles.closeButton} onClick={handleOnClose}>
+      <GoX/>
+      </button>
+      <Link className={styles.cityName} to={`/ciudad/${id}`} >
+      <span >{name}</span>
+      </Link>
       <CardTemp label="Max: " value={max}/>
       <CardTemp label="Min: " value={min}/>
       <WeatherIcon icon={img}     />
