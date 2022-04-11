@@ -35,11 +35,16 @@ export default function Card({ max, min, name, img, onClose,id }) {
   function WeatherIcon ({icon}){
 
     switch (icon) {
-      case "03n" : return <img src={icon_03n} alt="cloudy"/>     
+         
+      case "03d" : return <img src={icon_03n} alt="cloudy"/>     
+      case "01n" : return <img src={icon_01d} alt="clear sky"/>     
       case "01d" : return <img src={icon_01d} alt="clear sky"/>     
       case "13d" : return <img src={icon_13d} alt="snow"/>    
-      
-      default: return <img src={icon_09d} alt="shower rain"/>
+      case "13n" : return <img src={icon_13d} alt="snow"/>    
+      case "09n" : return <img src={icon_09d} alt="shower rain"/>    
+      case "09d" : return <img src={icon_09d} alt="shower rain"/>    
+     
+      default: return <img src={icon_03n} alt="cloudy"/>
     }
 
   }
